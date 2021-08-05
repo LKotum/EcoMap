@@ -6,6 +6,8 @@ using System;
 
 public class Controller : MonoBehaviour
 {
+    [SerializeField]
+    private float TS;
     public float forceMove;
     public float forceRotate;
     public Transform mainCamera;
@@ -29,6 +31,13 @@ public class Controller : MonoBehaviour
         if(movePosition){
             transform.position = Vector3.Lerp(transform.position, destination, speed);
             if(Vector3.Distance(transform.position, destination) < 5f) movePosition = false;
+            if(TS < .5f){
+                TS += Time.deltaTime;
+            }else{
+                if(Input.anyKey){
+                    movePosition = false;
+                }
+            }
         }else{
             X.text = "X = " + Convert.ToString(Math.Round(mainCamera.position.x, 2));
             Z.text = "Z = " + Convert.ToString(Math.Round(mainCamera.position.z, 2));
@@ -52,6 +61,7 @@ public class Controller : MonoBehaviour
             if(Input.GetKey(KeyCode.X)){
                 mainCamera.position -= mainCamera.up * forceMove;
             }
+            TS = 0;
         }
         
 
