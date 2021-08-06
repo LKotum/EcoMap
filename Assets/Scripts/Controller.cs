@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,10 +16,12 @@ public class Controller : MonoBehaviour
 
     public bool movePosition = false;
 
+    private float variable;
+    public float zoomSpeed;
 
     void Start()
     {
-        
+        zoomSpeed = 100f;
         destination = transform.position;
         mainCamera = this.gameObject.GetComponent<Transform>();
     }
@@ -29,6 +31,7 @@ public class Controller : MonoBehaviour
         if(movePosition){
             transform.position = Vector3.Lerp(transform.position, destination, speed);
             if(Vector3.Distance(transform.position, destination) < 5f) movePosition = false;
+            if(Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse2)) movePosition = false;
         }else{
             X.text = "X = " + Convert.ToString(Math.Round(mainCamera.position.x, 2));
             Z.text = "Z = " + Convert.ToString(Math.Round(mainCamera.position.z, 2));
@@ -53,16 +56,13 @@ public class Controller : MonoBehaviour
                 mainCamera.position -= mainCamera.up * forceMove;
             }
         }
-        
 
-
-
-
-        
-        
-    }
-
-
-
-    
+        float variable = Input.GetAxis("Mouse ScrollWheel");
+        if (variable > 0) {
+            this.gameObject.transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime);
+        }
+        if (variable < -.1) {
+            this.gameObject.transform.Translate(Vector3.forward * -zoomSpeed * Time.deltaTime);
+        }      
+    }   
 }
