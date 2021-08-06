@@ -56,13 +56,6 @@ public class Controller : MonoBehaviour
                 mainCamera.position -= mainCamera.up * forceMove;
             }
         }
-
-        float variable = Input.GetAxis("Mouse ScrollWheel");
-        if (variable > 0) {
-            this.gameObject.transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime);
-        }
-        if (variable < -.1) {
-            this.gameObject.transform.Translate(Vector3.forward * -zoomSpeed * Time.deltaTime);
-        }      
+   
     }   
 }
