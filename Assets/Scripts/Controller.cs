@@ -6,6 +6,7 @@ using System;
 
 public class Controller : MonoBehaviour
 {
+    public Slider slSpeed;
     public float forceMove;
     public float forceRotate;
     public Transform mainCamera;
@@ -21,6 +22,9 @@ public class Controller : MonoBehaviour
     [SerializeField]
     private Transform ChildCamera;
 
+    public void pushSpeed(){
+        forceMove = slSpeed.value;
+    }
     void Start()
     {
         zoomSpeed = 100f;

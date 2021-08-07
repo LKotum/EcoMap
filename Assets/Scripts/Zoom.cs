@@ -17,10 +17,6 @@ public class Zoom : MonoBehaviour
     void Update()
     {
         float variable = Input.GetAxis("Mouse ScrollWheel");
-        while(variable != 0){
-            float i =+ variable;
-            Debug.Log(i);
-        }
         Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
 
             this.gameObject.transform.Translate(Vector3.forward * -zoomSpeed * variable * Time.deltaTime,  Space.Self);  
