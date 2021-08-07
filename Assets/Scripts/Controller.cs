@@ -6,7 +6,9 @@ using System;
 
 public class Controller : MonoBehaviour
 {
-    public Slider slSpeed;
+    public Slider slSpeeddestination;
+    public Slider slSpeedvra;
+    
     public float forceMove;
     public float forceRotate;
     public Transform mainCamera;
@@ -22,8 +24,11 @@ public class Controller : MonoBehaviour
     [SerializeField]
     private Transform ChildCamera;
 
-    public void pushSpeed(){
-        forceMove = slSpeed.value;
+    public void pushSpeeddestination(){
+        forceMove = slSpeeddestination.value;
+    }
+    public void pushSpeedvra(){
+        forceRotate = slSpeedvra.value;
     }
     void Start()
     {

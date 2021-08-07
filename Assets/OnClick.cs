@@ -6,7 +6,7 @@ public class OnClick : MonoBehaviour
 {
     public GameObject cameraTransform;
     public GameObject cameraPosition;
-
+    public GameObject Buttion;
     public GameObject Panel_1;
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,14 @@ public class OnClick : MonoBehaviour
         cameraTransform.GetComponent<Controller>().vra = cameraPosition.transform.rotation;
         cameraTransform.GetComponent<Controller>().movePosition = true;
         activePanel();
+        activeButtion();
     }
 
 
     void activePanel(){
         Panel_1.SetActive(true);
+    }
+    void activeButtion(){
+        Buttion.SetActive(true);
     }
 }
