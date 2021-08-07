@@ -622,11 +622,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 829961259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930dd0720a9e243439b1290be4a553df, type: 3}
+  m_Script: {fileID: 11500000, guid: 726b7ed85edb3e344badb108bfe3c2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 1216042344}
-  cameraPosition: {fileID: 1633871217}
+  target: {fileID: 1633871222}
 --- !u!1 &1216042344
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +771,7 @@ GameObject:
   - component: {fileID: 1633871221}
   - component: {fileID: 1633871220}
   - component: {fileID: 1633871219}
+  - component: {fileID: 1633871218}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -779,6 +779,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1633871218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633871217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930dd0720a9e243439b1290be4a553df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 1216042344}
+  cameraPosition: {fileID: 829961259}
 --- !u!65 &1633871219
 BoxCollider:
   m_ObjectHideFlags: 0
