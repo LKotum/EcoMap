@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ public class Zoom : MonoBehaviour
 
     void Start()
     {
-        zoomSpeed = 500f;
+        zoomSpeed = 100f;
     }
 
     // Update is called once per frame
@@ -21,8 +21,14 @@ public class Zoom : MonoBehaviour
         if (variable > 0) {
             this.gameObject.transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime,  Space.Self);
         }
-        if (variable < -.1) {
+        if (variable < 0) {
             this.gameObject.transform.Translate(Vector3.forward * -zoomSpeed * Time.deltaTime,  Space.Self);
         }   
+        // if(Input.GetAxis("Mouse ScrollWheel") != 0){
+        //     this.gameObject.transform.position += transform.forward * Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        // }
+
     }
+
+    
 }
