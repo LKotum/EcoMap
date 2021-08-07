@@ -5,11 +5,13 @@ using UnityEngine;
 public class OnClick : MonoBehaviour
 {
     public GameObject cameraTransform;
-    public GameObject cameraPosition;
+    // Start is called before the first frame update
     void Start()
     {
         
     }
+
+    // Update is called once per frame
     void Update()
     {
         
@@ -17,7 +19,7 @@ public class OnClick : MonoBehaviour
 
     public void OnMouseDown()
     {
-        cameraTransform.GetComponent<Controller>().destination = cameraPosition.transform.position;
+        cameraTransform.GetComponent<Controller>().destination = transform.position;
         cameraTransform.GetComponent<Controller>().movePosition = true;
     }
 }
