@@ -13,11 +13,7 @@ public class Controller : MonoBehaviour
     public Text X,Y,Z;
     public float speed = 0.01f;
     public Vector3 destination;
-<<<<<<< HEAD
     public Quaternion vra;
-=======
-
->>>>>>> 7a3a6667df152a33f145bf00edf561f4710e2210
     public bool movePosition = false;
 
     private float variable;
@@ -34,12 +30,8 @@ public class Controller : MonoBehaviour
     {
         if(movePosition){
             transform.position = Vector3.Lerp(transform.position, destination, speed);
-<<<<<<< HEAD
             transform.rotation = Quaternion.Lerp(transform.rotation, vra, speed);
             if(Vector3.Distance(transform.position, destination) < .5f) movePosition = false;
-=======
-            if(Vector3.Distance(transform.position, destination) < 5f) movePosition = false;
->>>>>>> 7a3a6667df152a33f145bf00edf561f4710e2210
             if(Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse2)) movePosition = false;
         }else{
             X.text = "X = " + Convert.ToString(Math.Round(mainCamera.position.x, 2));
