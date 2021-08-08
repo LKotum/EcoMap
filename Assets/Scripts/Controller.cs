@@ -6,6 +6,7 @@ using System;
 
 public class Controller : MonoBehaviour
 {
+    public Slider slSpeed;
     public float forceMove;
     public float forceRotate;
     public Transform mainCamera;
@@ -18,7 +19,12 @@ public class Controller : MonoBehaviour
 
     private float variable;
     public float zoomSpeed;
+    [SerializeField]
+    private Transform ChildCamera;
 
+    public void pushSpeed(){
+        forceMove = slSpeed.value;
+    }
     void Start()
     {
         zoomSpeed = 100f;
@@ -30,8 +36,8 @@ public class Controller : MonoBehaviour
     {
         if(movePosition){
             transform.position = Vector3.Lerp(transform.position, destination, speed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, vra, speed);
-            if(Vector3.Distance(transform.position, destination) < .5f) movePosition = false;
+            ChildCamera.rotation = Quaternion.Lerp(ChildCamera.transform.rotation, vra, speed);
+            if(Vector3.Distance(transform.position, destination) < 1f) movePosition = false;
             if(Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse2)) movePosition = false;
         }else{
             X.text = "X = " + Convert.ToString(Math.Round(mainCamera.position.x, 2));
