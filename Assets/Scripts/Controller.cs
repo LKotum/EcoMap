@@ -6,23 +6,20 @@ using System;
 
 public class Controller : MonoBehaviour
 {
-    public Slider slSpeeddestination;
-    public Slider slSpeedvra;
-    
-    public float forceMove;
-    public float forceRotate;
-    public Transform mainCamera;
+    public Slider slSpeeddestination, slSpeedvra;
+
+    public GameObject panelInfo;
+    public float forceMove, forceRotate, zoomSpeed, variable;
+    public Transform mainCamera, ChildCamera;
 
     public Text X,Y,Z;
     public float speed = 0.01f;
-    public Vector3 destination;
+    public Vector3 destination, posStay;
     public Quaternion vra;
     public bool movePosition = false;
 
-    private float variable;
-    public float zoomSpeed;
-    [SerializeField]
-    private Transform ChildCamera;
+
+
 
     public void pushSpeeddestination(){
         forceMove = slSpeeddestination.value;
@@ -44,7 +41,11 @@ public class Controller : MonoBehaviour
             ChildCamera.rotation = Quaternion.Lerp(ChildCamera.transform.rotation, vra, speed);
             if(Vector3.Distance(transform.position, destination) < 1f) movePosition = false;
             if(Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse2)) movePosition = false;
+            posStay = transform.position;
         }else{
+            if(posStay != transform.position){
+                panelInfo.SetActive(false);
+            }
             X.text = "X = " + Convert.ToString(Math.Round(mainCamera.position.x, 2));
             Z.text = "Z = " + Convert.ToString(Math.Round(mainCamera.position.z, 2));
             Y.text = Convert.ToString(Math.Round(mainCamera.position.y, 2));
@@ -67,6 +68,8 @@ public class Controller : MonoBehaviour
             if(Input.GetKey(KeyCode.X)){
                 mainCamera.position -= mainCamera.up * forceMove;
             }
+
+
         }
    
     }   
