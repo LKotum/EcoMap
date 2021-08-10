@@ -17,9 +17,7 @@ public class Controller : MonoBehaviour
     public Vector3 destination, posStay;
     public Quaternion vra;
     public bool movePosition = false;
-
-
-
+    
 
     public void pushSpeeddestination(){
         forceMove = slSpeeddestination.value;
