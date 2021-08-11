@@ -29,6 +29,8 @@ public class Begunci : MonoBehaviour
         if(Convert.ToInt32(InputFieldMove.text) >= 0.5 && Convert.ToInt32(InputFieldMove.text) <= 5){
             SliderMov.GetComponent<Slider>().value = Convert.ToInt32(InputFieldMove.text);
             Controller.GetComponent<Controller>().forceMove = Convert.ToInt32(InputFieldMove.text);
+        }else{
+            //Добавить панель ошибки.
         }  
     }
     public void click2()
