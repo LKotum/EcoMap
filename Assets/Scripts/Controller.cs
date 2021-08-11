@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,8 +36,8 @@ public class Controller : MonoBehaviour
     {
         if(movePosition){
             transform.position = Vector3.Lerp(transform.position, destination, speed);
-            ChildCamera.rotation = Quaternion.Lerp(ChildCamera.transform.rotation, vra, speed);
-            if(Vector3.Distance(transform.position, destination) < 1f) movePosition = false;
+            transform.rotation = Quaternion.Lerp(transform.transform.rotation, new Quaternion(0, vra.y, 0, vra.w), speed);
+            if(Vector3.Distance(transform.position, destination) < .3f) movePosition = false;
             if(Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Mouse2)) movePosition = false;
             posStay = transform.position;
         }else{
