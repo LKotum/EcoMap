@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Begunci : MonoBehaviour
 {
-    public GameObject SliderMov, SliderRot, Controller;
+    public GameObject SliderMov, SliderRot, Controller, PanelInfo;
     public Text Move, Rotate, InputFieldMove, InputFieldRotate;
     private float SliderMoveValue, SliderRotateValue;
    

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Look : MonoBehaviour
 {
-    public GameObject target;
+    [SerializeField]
+    private GameObject target;
 
     void Start(){
-        //target = gameObject.GetComponentInParent<Transform>().gameObject; (разобраться)
+        target = transform.parent.gameObject;
     }
     void Update()
     {
