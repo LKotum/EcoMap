@@ -50,7 +50,7 @@ public class Controller : MonoBehaviour
 
             mainCamera.position += mainCamera.forward * forceMove * Input.GetAxis("Vertical");
             mainCamera.position += mainCamera.right * forceMove * Input.GetAxis("Horizontal");
-            //this.gameObject.transform.Translate(Input.GetAxis("Vertical") * move * Time.deltaTime * forceMove, Space.Self);
+            
             if(Input.GetKey(KeyCode.E)){
                 mainCamera.transform.Rotate(.0f, 1.0f * forceRotate, .0f, Space.World);
             }

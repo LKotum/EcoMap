@@ -1155,10 +1155,10 @@ MonoBehaviour:
   SliderMov: {fileID: 1082581435}
   SliderRot: {fileID: 355889316}
   Controller: {fileID: 1216042344}
-  Move: {fileID: 966607161}
-  Rotate: {fileID: 1722443927}
-  InputFieldMove: {fileID: 972216362}
-  InputFieldRotate: {fileID: 1527773689}
+  Move: {fileID: 0}
+  Rotate: {fileID: 0}
+  InputFieldMove: {fileID: 0}
+  InputFieldRotate: {fileID: 0}
 --- !u!4 &649396390
 Transform:
   m_ObjectHideFlags: 0
@@ -2514,8 +2514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76b9feaf9b65c043990c7596c67245c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slSpeeddestination: {fileID: 1082581437}
-  slSpeedvra: {fileID: 355889318}
+  slSpeeddestination: {fileID: 0}
+  slSpeedvra: {fileID: 0}
   panelInfo: {fileID: 18222087}
   forceMove: 1
   forceRotate: 1
@@ -2523,9 +2523,9 @@ MonoBehaviour:
   variable: 0
   mainCamera: {fileID: 0}
   ChildCamera: {fileID: 67192947}
-  X: {fileID: 1866835777}
-  Y: {fileID: 672043898}
-  Z: {fileID: 1752888021}
+  X: {fileID: 0}
+  Y: {fileID: 0}
+  Z: {fileID: 0}
   speed: 0.01
   destination: {x: 0, y: 0, z: 0}
   posStay: {x: 0, y: 0, z: 0}
