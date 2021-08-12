@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour
 
     public GameObject panelInfo;
     public float forceMove, forceRotate, zoomSpeed, variable;
-    public Transform mainCamera, ChildCamera;
+    public Transform mainCamera;
 
     public Text X,Y,Z;
     public float speed = 0.01f;
@@ -46,7 +46,7 @@ public class Controller : MonoBehaviour
             }
             X.text = "X = " + Convert.ToString(Math.Round(mainCamera.position.x, 2));
             Z.text = "Z = " + Convert.ToString(Math.Round(mainCamera.position.z, 2));
-            Y.text = Convert.ToString(Math.Round(mainCamera.position.y, 2));
+            Y.text = "Y = " + Convert.ToString(Math.Round(mainCamera.position.y, 2));
 
             mainCamera.position += mainCamera.forward * forceMove * Input.GetAxis("Vertical");
             mainCamera.position += mainCamera.right * forceMove * Input.GetAxis("Horizontal");
