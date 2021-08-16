@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour
     public Vector3 destination, posStay;
     public Quaternion vra;
     public bool movePosition = false;
-    
+    public Slider SliderY;
 
     public void pushSpeeddestination(){
         forceMove = slSpeeddestination.value;
@@ -30,6 +30,7 @@ public class Controller : MonoBehaviour
         zoomSpeed = 100f;
         destination = transform.position;
         mainCamera = this.gameObject.GetComponent<Transform>();
+        
     }
 
     void Update()
@@ -59,16 +60,21 @@ public class Controller : MonoBehaviour
                 mainCamera.transform.Rotate(.0f, -1.0f * forceRotate, .0f, Space.World);
             }
 
-            if(Input.GetKey(KeyCode.Z)){
+            if(Input.GetKey(KeyCode.Z)&&transform.position.y < SliderY.maxValue)
+            {
                 mainCamera.position += mainCamera.up * forceMove;
             }
 
-            if(Input.GetKey(KeyCode.X)){
+            if(Input.GetKey(KeyCode.X)&&transform.position.y > SliderY.minValue){
                 mainCamera.position -= mainCamera.up * forceMove;
+                
             }
 
 
         }
-   
-    }   
+        SliderY.value = transform.position.y;
+    } 
+    public void SetY(){
+        transform.position = new Vector3(transform.position.x,SliderY.value,transform.position.z);
+    }  
 }
