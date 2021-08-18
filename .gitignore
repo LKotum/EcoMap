@@ -35,3 +35,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/New Terrain.asset
+Assets/New Terrain.asset.meta
